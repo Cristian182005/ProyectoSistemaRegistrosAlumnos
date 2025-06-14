@@ -54,5 +54,6 @@ public class Alumno extends Persona{
     public void setSeccion(String seccion) {
         this.seccion = seccion;
     }
+
     
 }
