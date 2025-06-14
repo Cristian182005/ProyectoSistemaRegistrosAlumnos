@@ -39,7 +39,11 @@ idProfesor VARCHAR(20) Primary key,
 titulo VARCHAR(30),
 fechaContrato VARCHAR(35),
 id_persona int,
-Foreign key (id_persona) REFERENCES Persona(dni)
+id_curso VARCHAR(20),
+id_Aula VARCHAR(20),
+Foreign key (id_persona) REFERENCES Persona(dni),
+Foreign key (id_curso) REFERENCES Curso(idCurso),
+Foreign key (id_Aula) REFERENCES Aula(idAula)
 );
 
 
@@ -76,5 +80,7 @@ Create table Programacion(
 idProgramacion VARCHAR(20) Primary key,
 id_horario VARCHAR(20),
 id_aula VARCHAR(20),
-estado char
+estado char,
+Foreign key (id_horario) REFERENCES Horario(idHorario),
+Foreign key (id_aula) REFERENCES Aula(idAula)
 );
