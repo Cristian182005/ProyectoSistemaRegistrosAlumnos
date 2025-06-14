@@ -41,9 +41,11 @@ fechaContrato VARCHAR(35),
 id_persona int,
 id_curso VARCHAR(20),
 id_Aula VARCHAR(20),
+id_Admin int,
 Foreign key (id_persona) REFERENCES Persona(dni),
 Foreign key (id_curso) REFERENCES Curso(idCurso),
-Foreign key (id_Aula) REFERENCES Aula(idAula)
+Foreign key (id_Aula) REFERENCES Aula(idAula),
+Foreign key (id_Admin) REFERENCES Administrador(idAdmin)
 );
 
 
