@@ -1,11 +1,11 @@
 
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
 import java.util.Date;
 
 public class Alumno {
     private String idAlumno;
-    private Apoderado apoderado;
+    private String apoderado;
     private String nombres;
     private String apellidos;
     private String sexo;
@@ -17,7 +17,7 @@ public class Alumno {
     public Alumno() {
     }
     
-    public Alumno(String idAlumno, Apoderado apoderado, String nombres, String apellidos,
+    public Alumno(String idAlumno, String apoderado, String nombres, String apellidos,
                   String sexo, String telefono, String direccion, Date fechaNacimiento, char estado) {
         this.idAlumno = idAlumno;
         this.apoderado = apoderado;
@@ -42,11 +42,11 @@ public class Alumno {
         this.idAlumno = idAlumno;
     }
 
-    public Apoderado getApoderado() {
+    public String getApoderado() {
         return apoderado;
     }
 
-    public void setApoderado(Apoderado apoderado) {
+    public void setApoderado(String apoderado) {
         this.apoderado = apoderado;
     }
 

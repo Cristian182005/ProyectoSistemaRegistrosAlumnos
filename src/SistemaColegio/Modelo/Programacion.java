@@ -1,5 +1,5 @@
 
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
 public class Programacion {
     private String idProgramacion;

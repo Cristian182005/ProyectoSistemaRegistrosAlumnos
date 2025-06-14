@@ -1,6 +1,6 @@
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
-import SistemaRegistros.Interfaces.Asistencia;
+import SistemaColegio.Interfaces.Asistencia;
 
 public class Docente extends Persona implements Asistencia {
 

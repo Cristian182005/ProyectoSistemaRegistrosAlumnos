@@ -1,5 +1,5 @@
 
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
 public class DetalleMatricula {
     private Matricula matricula;

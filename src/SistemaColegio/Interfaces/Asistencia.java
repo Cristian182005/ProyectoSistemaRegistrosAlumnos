@@ -1,5 +1,5 @@
 
-package SistemaRegistros.Interfaces;
+package SistemaColegio.Interfaces;
 
 public interface Asistencia {
     void registrarAsistencia();

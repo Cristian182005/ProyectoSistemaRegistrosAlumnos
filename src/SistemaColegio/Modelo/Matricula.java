@@ -1,5 +1,5 @@
 
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
 import java.util.Date;
 

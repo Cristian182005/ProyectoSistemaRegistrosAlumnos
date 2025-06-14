@@ -1,5 +1,5 @@
 
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
 public class Horario {
     private String idHorario;

@@ -1,18 +1,18 @@
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
-import SistemaRegistros.Interfaces.Asistencia;
-import SistemaRegistros.Interfaces.Matricula;
+import SistemaColegio.Interfaces.Asistencia;
+import SistemaColegio.Interfaces.IMatricula;
 
-public class Admin implements Asistencia, Matricula {
+public class Admin implements Asistencia, IMatricula {
 
-    private String idAdmin;
+    private int idAdmin;
     private String usuario;
     private String contraseña;
 
     public Admin() {
     }
 
-    public Admin(String idAdmin, String usuario, String contraseña) {
+    public Admin(int idAdmin, String usuario, String contraseña) {
         this.idAdmin = idAdmin;
         this.usuario = usuario;
         this.contraseña = contraseña;
@@ -36,16 +36,16 @@ public class Admin implements Asistencia, Matricula {
     }
 
     @Override
-    public void reporteMatricula() {
+    public void ReporteMatricula() {
         
     }
     
     //Metodos get y set
-    public String getIdAdmin() {
+    public int getIdAdmin() {
         return idAdmin;
     }
 
-    public void setIdAdmin(String idAdmin) {
+    public void setIdAdmin(int idAdmin) {
         this.idAdmin = idAdmin;
     }
 

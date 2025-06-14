@@ -1,4 +1,4 @@
-package SistemaRegistros.Clases;
+package SistemaColegio.Modelo;
 
 public class Curso {
 
@@ -6,6 +6,7 @@ public class Curso {
     private String nombre;
     private String grado;
     private char estado;
+    
 
     public Curso() {
     }
