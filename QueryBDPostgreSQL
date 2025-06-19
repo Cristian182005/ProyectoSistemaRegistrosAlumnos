@@ -1,7 +1,7 @@
 Create table Administrador(
 idAdmin int Primary key,
-usuario VARCHAR(35),
-contraseña VARCHAR(35)
+id_PersonaUsuario VARCHAR(20),
+Foreign key (id_PersonaUsuario) REFERENCES PersonaUsuario (idPersonaUsuario)
 );
 
 Create table Alumno(
@@ -77,6 +77,15 @@ direccion VARCHAR(60),
 telefono int,
 email VARCHAR(50)
 );
+
+Create table PersonaUsuario(
+idPersonaUsuario VARCHAR(20) Primary key,
+usuario VARCHAR(35),
+contrasena VARCHAR(35),
+id_Persona int,
+Foreign key (id_Persona) REFERENCES Persona(dni)
+);
+
 
 Create table Programacion(
 idProgramacion VARCHAR(20) Primary key,

@@ -3,20 +3,20 @@ package SistemaColegio.Modelo;
 import SistemaColegio.Interfaces.Asistencia;
 import SistemaColegio.Interfaces.IMatricula;
 
-public class Admin implements Asistencia, IMatricula {
+public class Admin extends PersonaUsuario implements Asistencia, IMatricula {
 
     private int idAdmin;
-    private String usuario;
-    private String contraseña;
 
     public Admin() {
     }
 
-    public Admin(int idAdmin, String usuario, String contraseña) {
-        this.idAdmin = idAdmin;
-        this.usuario = usuario;
-        this.contraseña = contraseña;
+    public Admin(int dni, String Nombres, String ApellidoP, String ApellidM, String FechaNacimiento, String Sexo, String direccion, 
+            int telefono, String email, String usuario, String contrasena) {
+        super(dni, Nombres, ApellidoP, ApellidM, FechaNacimiento, Sexo, direccion, telefono, email, usuario, contrasena);
     }
+
+
+   
     
     //Interface Asistencia
     @Override
@@ -49,20 +49,6 @@ public class Admin implements Asistencia, IMatricula {
         this.idAdmin = idAdmin;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
+ 
 
 }
