@@ -10,73 +10,44 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetalleMatriculaDAO implements Dao<DetalleMatricula>{
-    private final Connection conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
-    public DetalleMatriculaDAO() {
-        conexion = SistemaColegioBD.getInstancia().getConexion();
-    }
+public class DetalleMatriculaDAO {
 
-    @Override
-    public boolean registrar(DetalleMatricula d) {
-        String sql = "INSERT INTO detallematricula (idmatricula, idcurso) VALUES (?, ?)";
-        try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
-            stmt.setString(1, d.getMatricula().getIdMatricula());
-            stmt.setString(2, d.getCurso().getIdCurso());
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public boolean registrarDetalle(String idMatricula, String idCurso) {
+        String sql = "INSERT INTO DetalleMatricula(id_matricula, id_curso) VALUES (?, ?)";
+        try {
+            Connection con = SistemaColegioBD.getInstancia().getConexion();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, idMatricula);
+            ps.setString(2, idCurso);
+
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.out.println("❌ Error al registrar detalle: " + e.getMessage());
             return false;
         }
     }
+    
+    public static void main(String[] args) {
+        MatriculaDAO mdao = new MatriculaDAO();
+        DetalleMatriculaDAO ddao = new DetalleMatriculaDAO();
 
-    @Override
-    public DetalleMatricula consultarPorId(int id) {
-        String sql = "SELECT * FROM detallematricula WHERE id = ?";
-        try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                Matricula m = new Matricula(); m.setIdMatricula(rs.getString("idmatricula"));
-                Curso c = new Curso(); c.setIdCurso(rs.getString("idcurso"));
-                return new DetalleMatricula(m, c);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        String idMatricula = "M010"; // Único
+        String periodo = "2025-I";
+        String estado = "A";
+
+        if (mdao.registrarMatricula(idMatricula, periodo, estado)) {
+            System.out.println("✅ Matrícula registrada");
+
+            // Cursos asociados
+            ddao.registrarDetalle(idMatricula, "C001");
+            ddao.registrarDetalle(idMatricula, "C002");
+        } else {
+            System.out.println("❌ Error al registrar matrícula");
         }
-        return null;
-    }
-
-    @Override
-    public boolean actualizar(DetalleMatricula d) {
-        return false;
-    }
-
-    @Override
-    public boolean eliminar(int id) {
-        String sql = "DELETE FROM detallematricula WHERE id = ?";
-        try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    @Override
-    public List<DetalleMatricula> listarTodos() {
-        List<DetalleMatricula> lista = new ArrayList<>();
-        String sql = "SELECT * FROM detallematricula";
-        try (Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                Matricula m = new Matricula(); m.setIdMatricula(rs.getString("idmatricula"));
-                Curso c = new Curso(); c.setIdCurso(rs.getString("idcurso"));
-                lista.add(new DetalleMatricula(m, c));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return lista;
     }
 }
+

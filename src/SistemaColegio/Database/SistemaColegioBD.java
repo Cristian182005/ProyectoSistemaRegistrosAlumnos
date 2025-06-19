@@ -8,7 +8,7 @@ public class SistemaColegioBD {
     private Connection conexion;
     
     
-    private final String url = "jdbc:postgresql://localhost:5432/SistemaColegio";
+    private final String url = "jdbc:postgresql://localhost:5432/SistemaColegioBD";
     private final String Usuario = "postgres";
     private final String Clave = "root";
     
