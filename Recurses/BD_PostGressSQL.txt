@@ -1,0 +1,59 @@
+create database SistemaNotasBD
+
+CREATE TABLE Persona (
+    id SERIAL PRIMARY KEY,
+    dni INTEGER UNIQUE NOT NULL,
+    nombre VARCHAR(50),
+    apellido_m VARCHAR(50),
+    apellido_p VARCHAR(50),
+    edad INTEGER
+);
+
+CREATE TABLE Alumno (
+    id SERIAL PRIMARY KEY,
+    grado INTEGER,
+    seccion CHAR(1),
+    id_persona INTEGER REFERENCES Persona(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Competencias (
+    id SERIAL PRIMARY KEY,
+    competencia1 INTEGER,
+    competencia2 INTEGER,
+    competencia3 INTEGER,
+    id_alumno INTEGER REFERENCES Alumno(id) ON DELETE CASCADE,
+    id_curso INTEGER REFERENCES Curso(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Curso (
+    id SERIAL PRIMARY KEY,
+    nombre_curso VARCHAR(100),
+    id_competencias INTEGER REFERENCES Competencias(id) ON DELETE SET NULL
+);
+
+CREATE TABLE Notas (
+    id SERIAL PRIMARY KEY,
+    promedio INTEGER,
+    nota_final CHAR(1),
+    id_alumno INTEGER REFERENCES Alumno(id) ON DELETE CASCADE,
+    id_curso INTEGER REFERENCES Curso(id) ON DELETE CASCADE
+);
+
+-- Insertar personas
+INSERT INTO Persona (dni, nombre, apellido_p, apellido_m, edad)
+VALUES (12345678, 'Juan', 'Perez', 'Lopez', 15),
+       (87654321, 'Maria', 'Gomez', 'Diaz', 16);
+
+-- Insertar alumnos relacionados con personas
+INSERT INTO Alumno (grado, seccion, id_persona)
+VALUES (3, 'A', 1),  -- el id_persona 1 es Juan Perez
+       (4, 'B', 2);  -- el id_persona 2 es Maria Gomez
+
+-- Insertar competencias (pueden ser genéricas o específicas)
+INSERT INTO Competencias (competencia1, competencia2, competencia3)
+VALUES (14, 15, 20);
+
+-- Insertar cursos asociados a competencias
+INSERT INTO Curso (nombre_curso, id_competencias)
+VALUES ('Matemáticas', 1),
+       ('Ciencias', 1);
