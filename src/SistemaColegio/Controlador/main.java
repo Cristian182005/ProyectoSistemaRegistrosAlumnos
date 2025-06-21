@@ -21,7 +21,7 @@ public class main {
     for (Admin a : admins) {
         System.out.println("id: " + a.getIdAdmin());
         System.out.println("usuario: " + a.getUsuario());
-        System.out.println("contraseña: " + a.getContraseña());
+        System.out.println("contraseña: " + a.getContrasena());
         System.out.println("-------------");
     }
     

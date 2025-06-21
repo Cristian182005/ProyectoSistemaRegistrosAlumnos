@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+<<<<<<< HEAD
             <name>SistemaRegistrosAlumnos</name>
+=======
+            <name>SistemaNotasColegio</name>
+>>>>>>> 0ef362b (waza)
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>

@@ -1,0 +1,97 @@
+Create table Administrador(
+idAdmin int Primary key,
+id_PersonaUsuario VARCHAR(20),
+Foreign key (id_PersonaUsuario) REFERENCES PersonaUsuario (idPersonaUsuario)
+);
+
+Create table Alumno(
+idAlumno VARCHAR(20) Primary key,
+apoderado VARCHAR(40),
+grado VARCHAR(15),
+seccion VARCHAR(15),
+id_persona int,
+Foreign key (id_persona) References Persona(dni)
+);
+
+Create table Aula(
+idAula VARCHAR(20) Primary key,
+numeroAula int,
+capacidad int,
+estado CHAR
+);
+
+Create table Curso(
+idCurso VARCHAR(20) Primary key,
+nombre VARCHAR(35),
+grado VARCHAR(35),
+estado CHAR
+);
+
+Create table DetalleMatricula(
+id_matricula VARCHAR(20),
+id_curso VARCHAR(20),
+Foreign key (id_matricula) REFERENCES Matricula(idMatricula),
+Foreign key (id_curso) REFERENCES Curso(idCurso)
+);
+
+Create table Docente(
+idProfesor VARCHAR(20) Primary key,
+titulo VARCHAR(30),
+fechaContrato VARCHAR(35),
+id_persona int,
+id_curso VARCHAR(20),
+id_Aula VARCHAR(20),
+id_Admin int,
+Foreign key (id_persona) REFERENCES Persona(dni),
+Foreign key (id_curso) REFERENCES Curso(idCurso),
+Foreign key (id_Aula) REFERENCES Aula(idAula),
+Foreign key (id_Admin) REFERENCES Administrador(idAdmin)
+);
+
+
+
+Create table Horario(
+idHorario VARCHAR(20) Primary key,
+diaSemana VARCHAR(15),
+horaEntrada VARCHAR(15),
+horaSalida VARCHAR(15),
+id_Aula VARCHAR(20),
+Foreign key (id_Aula) REFERENCES Aula(idAula)
+);
+
+Create table Matricula(
+idMatricula VARCHAR(20) Primary key,
+periodoAcademico VARCHAR(35),
+fecha date,
+estado char
+);
+
+Create table Persona(
+dni int Primary key,
+Nombres VARCHAR(35),
+ApellidoP VARCHAR(35),
+ApellidoM VARCHAR(35),
+FechaNacimiento VARCHAR(30),
+Sexo CHAR,
+direccion VARCHAR(60),
+telefono int,
+email VARCHAR(50)
+);
+
+Create table PersonaUsuario(
+idPersonaUsuario VARCHAR(20) Primary key,
+usuario VARCHAR(35),
+contrasena VARCHAR(35),
+id_Persona int,
+Foreign key (id_Persona) REFERENCES Persona(dni)
+);
+
+
+Create table Programacion(
+idProgramacion VARCHAR(20) Primary key,
+id_horario VARCHAR(20),
+id_aula VARCHAR(20),
+estado char,
+Foreign key (id_horario) REFERENCES Horario(idHorario),
+Foreign key (id_aula) REFERENCES Aula(idAula)
+);

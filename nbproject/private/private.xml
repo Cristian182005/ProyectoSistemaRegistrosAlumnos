@@ -2,6 +2,27 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/user/Desktop/SistemaRegistrosAlumnos/src/SistemaColegio/Controlador/LoginFrame.java</file>
+            <file>file:/C:/Users/user/Desktop/SistemaRegistrosAlumnos/src/SistemaColegio/Controlador/PanelPrincipalFrame.java</file>
+=======
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/SistemaNotasColegio.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/clases/Persona.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/clases/Alumno.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/clases/Curso.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/clases/Competencias.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/clases/Notas.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/vistas/VistaAdmin.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/vistas/VistaGeneral.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/vistas/VistaRegistroNotas.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/BaseDeDatos/SistemaNotas.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/SistemaNotasColegio/src/sistemanotascolegio/BaseDeDatos/TestConexion.java</file>
+>>>>>>> 0ef362b (waza)
+        </group>
+>>>>>>> e47e36bea589aedf228fe508b464b78b452de9f5
     </open-files>
 </project-private>

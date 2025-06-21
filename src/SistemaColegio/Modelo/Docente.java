@@ -2,21 +2,21 @@ package SistemaColegio.Modelo;
 
 import SistemaColegio.Interfaces.Asistencia;
 
-public class Docente extends Persona implements Asistencia {
+public class Docente extends PersonaUsuario implements Asistencia {
 
     private String idProfesor;
     private String titulo;
     private String fechaContrato;
 
-    public Docente(String idProfesor, String titulo, String fechaContrato,
-                   int dni, String nombres, String apellidoP, String apellidoM,
-                   String fechaNacimiento, String sexo, String direccion,
-                   int telefono, String email) {
-        super(dni, nombres, apellidoP, apellidoM, fechaNacimiento, sexo, direccion, telefono, email);
-        this.idProfesor = idProfesor;
-        this.titulo = titulo;
-        this.fechaContrato = fechaContrato;
+    public Docente() {
     }
+
+    public Docente(int dni, String Nombres, String ApellidoP, String ApellidM, String FechaNacimiento, 
+            String Sexo, String direccion, int telefono, String email, String usuario, String contrasena) {
+        super(dni, Nombres, ApellidoP, ApellidM, FechaNacimiento, Sexo, direccion, telefono, email, usuario, contrasena);
+    }
+
+   
 
     
     public void asignarNotas() {
